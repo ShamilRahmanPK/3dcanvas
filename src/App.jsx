@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import Header from './components/Header';
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
-import Tips from './components/Tips';
 import './App.css';
 
 function App() {
@@ -11,8 +10,6 @@ function App() {
   const canvasRef = useRef(null);
 
   const handleFileUpload = (file) => {
-    // This function will pass the file to the ThreeCanvas component
-    // We're just storing the file reference for now
     setModel(file);
   };
 
@@ -21,7 +18,6 @@ function App() {
   };
 
   const fitModelToView = () => {
-    // This function will be passed to the ThreeCanvas component
     if (canvasRef.current && canvasRef.current.fitToView) {
       canvasRef.current.fitToView();
     }
@@ -40,7 +36,6 @@ function App() {
           canvasRef={canvasRef}
         />
       </div>
-      <Tips />
     </div>
   );
 }
